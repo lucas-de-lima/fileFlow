@@ -3,6 +3,7 @@ import sys
 from ting_file_management.file_management import txt_importer
 from ting_file_management.abstract_queue import AbstractQueue
 
+
 def process(path_file: str, instance: AbstractQueue):
     # Verifica se o arquivo já foi processado anteriormente
     for item in instance.queue:
@@ -39,3 +40,4 @@ def file_metadata(instance, position):
         print(file_data)
     except IndexError:
         print("Posição inválida", file=sys.stderr)
+        

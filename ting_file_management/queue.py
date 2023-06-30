@@ -13,10 +13,11 @@ class Queue(AbstractQueue):
 
     def dequeue(self):
         if len(self.queue) == 0:
-            raise IndexError("A fila está vazia. Não é possível remover elementos.")
+            raise IndexError("Fila está vazia. Impossível remover elementos.")
         return self.queue.pop(0)
 
     def search(self, index):
         if index < 0 or index >= len(self.queue):
             raise IndexError("Índice Inválido ou Inexistente")
         return self.queue[index]
+    
