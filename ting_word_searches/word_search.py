@@ -29,7 +29,7 @@ def search_by_word(word, instance):
         file_name = file_data["nome_do_arquivo"]
         occurrences = []
 
-        for line_number, line_content in enumerate(file_data[f_l], start=1): 
+        for line_number, line_content in enumerate(file_data[f_l], start=1):
             if word.lower() in line_content.lower():
                 occurrence = {"linha": line_number, "conteudo": line_content}
                 occurrences.append(occurrence)
