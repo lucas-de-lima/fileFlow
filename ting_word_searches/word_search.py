@@ -1,12 +1,12 @@
 def exists_word(word, instance):
     results = []
+    f_l = "linhas_do_arquivo"
 
     for file_data in instance.queue:
         file_name = file_data["nome_do_arquivo"]
         occurrences = []
 
-        for line_number, line_content in enumerate(
-            file_data["linhas_do_arquivo"], start=1):
+        for line_number, line_content in enumerate(file_data[f_l], start=1):
             if word.lower() in line_content.lower():
                 occurrences.append({"linha": line_number})
 
@@ -23,13 +23,13 @@ def exists_word(word, instance):
 
 def search_by_word(word, instance):
     results = []
+    f_l = "linhas_do_arquivo"
 
     for file_data in instance.queue:
         file_name = file_data["nome_do_arquivo"]
         occurrences = []
 
-        for line_number, line_content in enumerate(
-            file_data["linhas_do_arquivo"], start=1):
+        for line_number, line_content in enumerate(file_data[f_l], start=1): 
             if word.lower() in line_content.lower():
                 occurrence = {"linha": line_number, "conteudo": line_content}
                 occurrences.append(occurrence)
